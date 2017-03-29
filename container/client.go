@@ -60,7 +60,7 @@ func (client dockerClient) ListContainers(fn Filter) ([]Container, error) {
 
 	runningContainers, err := client.api.ContainerList(
 		bg,
-		types.ContainerListOptions{})
+		types.ContainerListOptions{all: true})
 	if err != nil {
 		return nil, err
 	}
